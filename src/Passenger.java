@@ -4,25 +4,30 @@ import java.util.List;
 public class Passenger {
 
     private String name;
-    private List<Trip> trip = new ArrayList<>();
+    private List<Trip> trips = new ArrayList<>();
+
+    public Passenger(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public List<Trip> getTrips() {
+        return trips;
     }
 
-    public List<Trip> getTrip() {
-        return trip;
-    }
-
-    public void setTrip(List<Trip> trip) {
-        this.trip = trip;
-    }
 
     public void request(Trip trip){
-        this.trip.add(trip);
+        this.trips.add(trip);
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "name='" + name + '\'' +
+                ", trips=" + trips +
+                '}';
     }
 }
