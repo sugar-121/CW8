@@ -1,3 +1,9 @@
+import entity.Location;
+import entity.Passenger;
+import entity.Trip;
+import repository.PassengerRepository;
+import util.ApplicationContext;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,6 +18,41 @@ public class Main {
         }
     }
 
+    public static void main(String[] args) {
+        PassengerRepository passengerRepository = ApplicationContext.getInstance().getPassengerRepository();
+        while (true) {
+
+            System.out.println("""
+                    1. register
+                    2. log in
+                    3. show map
+                    4. choose trip
+                    5.exit
+                    """);
+            int choose = input.nextInt();
+
+            switch (choose) {
+                case 1:
+
+                    //passengerRepository.save();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    printMap(map);
+                    break;
+                case 4:
+                    chooseTrip();
+                    break;
+                case 5:
+                    return;
+            }
+        }
+    }
+
+    //crudRepository va Abstract repository besaz
+    //bejaye basedomain bezan BaseEntity
+    //public static void registerPassenger(String[][] map)
 
     public static void printMap(String[][] map) {
         for (String[] strings : map) {
@@ -40,36 +81,5 @@ public class Main {
 
         map[startX][startY] = "s";
         map[destX][destY] = "d";
-    }
-
-    public static void main(String[] args) {
-
-
-        while (true) {
-
-            System.out.println("""
-                1. register
-                2. log in
-                3. show map
-                4. choose trip
-                5.exit
-                """);
-            int choose = input.nextInt();
-
-            switch (choose) {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    printMap(map);
-                    break;
-                case 4:
-                    chooseTrip();
-                    break;
-                case 5:
-                    return;
-            }
-        }
     }
 }

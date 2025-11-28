@@ -1,7 +1,10 @@
+package entity;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Driver {
+    private Integer id;
     private String name;
     private boolean driving;
     List<Trip> requestedTrips = new ArrayList<>();
@@ -18,7 +21,7 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Driver{" +
+        return "entity.Driver{" +
                 "name='" + name + '\'' +
                 ", driving=" + driving +
                 ", requestedTrips=" + requestedTrips +
